@@ -450,11 +450,11 @@ NB See later stages for the creation of the web page.
 
 Here we look at a variety of technicques and technologies for raising the alarm:
 <dl> 
-<dt><a href=./modules/email/Email-alerting-V6.md>Generate Email alerts</a> </dt>
+<dt><a href=/modules/email/Email-alerting-V6.md>Generate Email alerts</a> </dt>
 <dd>Integrate message flow to **SMTP** services to send emails</dd>
-<dt><a href=./modules/SMS/Twilio-SMS-V6.md>Add Twilio to raise alerts with SMS</a></dt>
+<dt><a href=/modules/SMS/Twilio-SMS-V6.md>Add Twilio to raise alerts with SMS</a></dt>
 <dd>Incorporate **SMS messaging** to send alerts to mobile devices</dd>
-<dt><a href=./modules/Watson/Watson-speaks-V6.md>Use Watson services to hear alerts</a></dt>
+<dt><a href=/modules/Watson/Watson-speaks-V6.md>Use Watson services to hear alerts</a></dt>
 <dd>Using **Watson Cognitive** services to turn text into spoken messages</dd>
 </dl>
 
@@ -466,9 +466,9 @@ Create a simple web front-end in Bluemix
 In this section, you will be creating and tailoring the webpage to present the
 data in the Bluemix environment. You will link the webpage to the Node-RED
 application and display the results as a simple dashboard.
-![](media/599d20455c4ebb598a5c7b43c7f5c8e7.png)
+![](/media/599d20455c4ebb598a5c7b43c7f5c8e7.png)
 
-![Deploy website app to Bluemix](./BMX-static-webpage-V6.md)
+![Deploy website app to Bluemix](/modules/UI/BMX-static-webpage-V6.md)
 
 Add dashboard components to the website using Node RED
 ======================================================
@@ -476,7 +476,7 @@ Add dashboard components to the website using Node RED
 The simple web data display is a little raw -- with new features available in Node-RED,
 you can add graphical components simply and quickly.
 
-![Create Node-RED dashboard widgets](./BMX-NR-dashboard-V6.md)
+![Create Node-RED dashboard widgets](/modules/UI/BMX-NR-dashboard-V6.md)
 
 Other content sources
 =====================
@@ -511,41 +511,7 @@ simulator. Now, we will introduce real-world data using a prototyping kit from a
 group of vendors who have configured their equipment to connect to the IBM
 Internet of Things Foundation Quickstart service straight out of the box.
 
-Current options available include:
-
-Texas Instruments SensorTag
-
-<http://www.ti.com/ww/en/wireless_connectivity/sensortag2015/appsAndPartners.html#main>
-
-![](media/93774f020b17d40f4abb647dc81b5e8c.png)
-
-ARM mbed IOT Starter Kit
-
-<https://developer.mbed.org/platforms/IBMEthernetKit/>
-
-![](media/ed797e7eb4b1673cea96a84c07334d56.png)
-
-Other kits and guides on how to connect them to the Quickstart service are
-available at the Recipes page:
-
-<https://developer.ibm.com/recipes/>
-
-We will use the ARM kit as an example.
-
-Following the Quickstart guide supplied in the kit, connect the device to the
-internet, and identify its Device Id from the onboard display.
-
-In the Node-RED edit screen, add another `IBM IOT App in` node, update the
-config to connect to the new device data, and link into the existing flow:
-
-![](media/65f108b661c7567007308b122bd32d9e.png)
-
-Because this device generates a temperature value and tags it with the same
-field name (`temp`) as the IOTSensor simulator, its data can be integrated
-directly to the current application.
-
-Update the dashboard webpage to use the sensor Device Id, and your application
-will now display the data feed from the actual device.
+[Activating a physical IOT sensor device](/modules/IOT/IOT-real-sensors.md)
 
 Now you can close the IOTSensor simulator, and your application will continue to
 run.
