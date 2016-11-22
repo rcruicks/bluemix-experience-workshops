@@ -450,11 +450,11 @@ NB See later stages for the creation of the web page.
 
 Here we look at a variety of technicques and technologies for raising the alarm:
 <dl> 
-<dt><a href=./Email-alerting-V6.md>Generate Email alerts</a> </dt>
+<dt><a href=./modules/email/Email-alerting-V6.md>Generate Email alerts</a> </dt>
 <dd>Integrate message flow to **SMTP** services to send emails</dd>
-<dt><a href=./Twilio-SMS-V6.md>Add Twilio to raise alerts with SMS</a></dt>
+<dt><a href=./modules/SMS/Twilio-SMS-V6.md>Add Twilio to raise alerts with SMS</a></dt>
 <dd>Incorporate **SMS messaging** to send alerts to mobile devices</dd>
-<dt><a href=./Watson-speaks-V6.md>Use Watson services to hear alerts</a></dt>
+<dt><a href=./modules/Watson/Watson-speaks-V6.md>Use Watson services to hear alerts</a></dt>
 <dd>Using **Watson Cognitive** services to turn text into spoken messages</dd>
 </dl>
 
