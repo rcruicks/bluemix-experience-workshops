@@ -14,7 +14,7 @@ gmail account; if using the email node, avoid the use of gmail.com* **\*\* NOTE
 1.  Create a connector from the output of the `danger` temperature decision node
 	to the input of the email node.
 
-	![](media/7eb742442a7f7e3a6b30bdd8b5d1f9df.png)
+	![](/media/7eb742442a7f7e3a6b30bdd8b5d1f9df.png)
 
 1.  Double-click the new output node and enter configuration settings for your
 	e-mail account you'd like to use to send the email from the flow -- any email
@@ -22,7 +22,7 @@ gmail account; if using the email node, avoid the use of gmail.com* **\*\* NOTE
 	address, email server, (optional) port, userid, and password for the email
 	account to be used to send the notification:
 
-	![](media/5a1409f92c1ca23c95a46ff0136e9d5c.png)
+	![](/media/5a1409f92c1ca23c95a46ff0136e9d5c.png)
 
 	Content of the e-mail will be set from the msg.payload property, with a
 	subject line of msg.topic:
