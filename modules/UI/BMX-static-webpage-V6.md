@@ -2,7 +2,7 @@ Go to the following **IBM developerWorks** page:
 
 <http://www.ibm.com/developerworks/cloud/library/cl-deploy-a-hello-world-webpage-to-bluemix-app/>
 
-![](media/6d10ad6190c1e0891853ae9c05cc82a8.png)
+![](/media/6d10ad6190c1e0891853ae9c05cc82a8.png)
 
 Feel free to use the information on this page to get a deeper understanding of
 how the overall process works, but for now, scroll down to the subheading:
@@ -11,12 +11,12 @@ how the overall process works, but for now, scroll down to the subheading:
 
 You should see a button like this:
 
-![](media/98f5dbc24d64d3ac2d8f5961bf9d95cd.png)
+![](/media/98f5dbc24d64d3ac2d8f5961bf9d95cd.png)
 
 After clicking this button, you will be redirected into the IBM DevOps service,
 where you can begin editing the sample website:
 
-![](media/5a38d7ff9a5f2c8c40048b764e7a4e1d.png)
+![](/media/5a38d7ff9a5f2c8c40048b764e7a4e1d.png)
 
 You will be prompted to login -- use you Bluemix username and password.
 
@@ -25,26 +25,26 @@ which Bluemix region (US South or UK) as the hosting environment. As for the
 Node-RED application earlier, choose a name which will be unique. We will use
 **IOT-WS-Home** as the example.
 
-![](media/eb1784bc54019fe844096623abadc7a1.png)
+![](/media/eb1784bc54019fe844096623abadc7a1.png)
 
 Now click on the **Deploy** Button.
 
 The deployment will progress:
 
-![](media/f08faa25764bd7de0e6e1a210c9fae70.png)
+![](/media/f08faa25764bd7de0e6e1a210c9fae70.png)
 
 Taking a minute or two to complete the Bluemix deployment.
 
-![](media/c0e637e839d14e13b2be4e6cc7aaeb58.png)
+![](/media/c0e637e839d14e13b2be4e6cc7aaeb58.png)
 
 A successful deployment will present you with the options of editing code, or
 viewing your new app.
 
-![](media/c945a18cef18990357632134ab6ffb04.png)
+![](/media/c945a18cef18990357632134ab6ffb04.png)
 
 If you click View Your App, you should see something like this:
 
-![](media/b506824f0551b555529f8bf77ff5da13.png)
+![](/media/b506824f0551b555529f8bf77ff5da13.png)
 
 Edit the website to load the device history into a dashboard
 ============================================================
@@ -57,11 +57,11 @@ could be interesting or significant.
 Selecting the Edit Code option from the previous DevOps page, you'll be taken to
 the project view of the online development tools:
 
-![](media/1490d3283540c152a70af57dd82ed1be.png)
+![](/media/1490d3283540c152a70af57dd82ed1be.png)
 
 From here, click on `index.html` to open an edit window:
 
-![](media/972e5d28a44d53fd6c4a4e96d0eb1944.png)
+![](/media/972e5d28a44d53fd6c4a4e96d0eb1944.png)
 
 Update the contents of index.html to connect to your history display URL:
 
@@ -80,21 +80,21 @@ Update the contents of index.html to connect to your history display URL:
 
 To look like this (with adjustments for your URL):
 
-![](media/1af359880d67a65fc0f93c4bd8b9ee4d.png)
+![](/media/1af359880d67a65fc0f93c4bd8b9ee4d.png)
 
 Click on the white triangle/arrow highlighted by the red circle; this will push
 your changes into the running website.
 
 The status area to the left of the arrow will change to:
 
-![](media/003fa0e56e6d4921aed2b134d005f795.png)
+![](/media/003fa0e56e6d4921aed2b134d005f795.png)
 
 When this changes to show that the application is running again, click on the
 launch icon indicated by the green circle in the above screen-shot.
 
 You should now have a page similar to this:
 
-![](media/ddccabdf3376dd16e461f674a6ee4e9c.png)
+![](/media/ddccabdf3376dd16e461f674a6ee4e9c.png)
 
 It's a little rough, but shows the beginnings of a dashboard to monitor the
 history of your device. You will notice that the content in the iframe updates
@@ -111,4 +111,4 @@ used when you configured the IOT App In node in your Node-RED application.
 
 You might end up with something like this:
 
-![](media/6386fc4c2d219a1e08cd3a9b215d9c1c.png)
+![](/media/6386fc4c2d219a1e08cd3a9b215d9c1c.png)
