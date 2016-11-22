@@ -1,0 +1,38 @@
+[{"id":"ccbe9a15.82a3a","type":"http
+in","name":"","url":"/history","method":"get","swaggerDoc":"",
+
+"x":81.19999694824219,"y":327.20001220703125,"z":"21670b53.c839cc",
+
+"wires":[["314a48bc.abee2"]]},
+
+{"id":"314a48bc.abee2","type":"cloudant
+in","service":"IOT-WS-cloudantNoSQLDB","cloudant":"","name":"","database":"iottemp","search":"\_all\_","design":"","index":"",
+
+"x":340.20001220703125,"y":327.20001220703125,"z":"21670b53.c839cc",
+
+"wires":[["8c0e9b35.1f5e2"]]},
+
+{"id":"8c0e9b35.1f5e2","type":"function","name":"temp stats","func":"var avg =
+0;\\nvar max = 0;\\nvar min = 9999;\\nvar count = 0;\\nvar sum = 0;\\nvar temp
+=0;\\n\\nfor (var i in msg.payload){\\n temp =
+parseInt(msg.payload[i].payload);\\n count += 1;\\n sum += temp;\\n if (temp \>
+max){\\n max = temp;\\n }\\n if (temp \< min){\\n min = temp;\\n }\\n}\\n\\navg
+= sum / count;\\n\\nmsg.count = count;\\nmsg.avg = avg.toFixed(2); \\nmsg.max =
+max;\\nmsg.min = min;\\n\\nreturn
+msg;","outputs":1,"noerr":0,"x":512.2000122070312,"y":326.20001220703125,"z":"21670b53.c839cc","wires":[["c988f014.f6d508"]]},{"id":"c988f014.f6d508","type":"template","name":"format
+page","field":"payload","format":"handlebars","template":"\<html\>\\n
+\<head\>\\n \<meta http-equiv=\\"refresh\\" content=\\"5\\"\>\\n
+\</head\>\\n\<body\>\\n This is the temperature history:\\n\<br\>\\nValues = {{
+count}}, Max = {{max}}, Min = {{min}}, Average = {{avg}}\\n\<p\>\\n\<select
+size=10\>\\n{{\#payload}}\\n
+\<option\>{{payload}}\</option\>\\n{{/payload}}\\n\</select\>\\n\</body\>\\n\</html\>\\n",
+
+"x":690.2000122070312,"y":326.20001220703125,"z":"21670b53.c839cc",
+
+"wires":[["c807dbb8.0da9"]]},
+
+{"id":"c807dbb8.0da9","type":"http response","name":"",
+
+"x":854.2000122070312,"y":327.20001220703125,"z":"21670b53.c839cc",
+
+"wires":[]}]
