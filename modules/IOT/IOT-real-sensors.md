@@ -2,7 +2,7 @@
 Current options available include:
 
 -	Texas Instruments SensorTag
-	<http://www.ti.com/ww/en/wireless_connectivity/sensortag2015/appsAndPartners.html#main>
+	http://www.ti.com/ww/en/wireless_connectivity/sensortag2015/appsAndPartners.html#main
 	![](/media/93774f020b17d40f4abb647dc81b5e8c.png)
 	This device requires a bluetooth (BLE) device to act as a gateway, as it has no built-in internet connectivity.
 	Texas Instruments provides suitable apps in both the 
@@ -10,14 +10,14 @@ Current options available include:
 	[Google Play store for Android](https://play.google.com/store/apps/details?id=com.ti.ble.sensortag&hl=en_GB)
 
 -	ARM mbed IOT Starter Kit
-	< https://developer.mbed.org/platforms/IBMEthernetKit/>
+	https://developer.mbed.org/platforms/IBMEthernetKit
 	![](/media/ed797e7eb4b1673cea96a84c07334d56.png)
 	This device has built-in ethernet support for connecting to the internet - you will need an ethernet cable,
 	and suitably-configured network port to be able to use this kit.
   
 -	Other kits and guides on how to connect them to the Quickstart service are
 	available at the Recipes page:
-	<https://developer.ibm.com/recipes/>
+	https://developer.ibm.com/recipes
 
 If ethernet access to the internet is available, we will use the ARM kit as an example.
 
