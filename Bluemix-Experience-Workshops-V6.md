@@ -81,7 +81,7 @@ Workshop Activities
 
 [Email Messages](#email-messages)
 
-[SMS text](#sms-text)
+[SMS text](#Add-Twilio-to raise-alerts-with-SMS)
 
 [Adding Watson services to hear alerts](#adding-watson-services-to-hear-alerts)
 
@@ -454,7 +454,7 @@ Here we look at a variety of technicques and technologies for raising the alarm:
 <dd>Integrate message flow to **SMTP** services to send emails</dd>
 <dt><a href=/modules/SMS/Twilio-SMS-V6.md>Add Twilio to raise alerts with SMS</a></dt>
 <dd>Incorporate **SMS messaging** to send alerts to mobile devices</dd>
-<dt><a href=/modules/Watson/Watson-speaks-V6.md>Use Watson services to hear alerts</a></dt>
+<dt><a href=/modules/Watson/Watson-speaks-V6.md>Adding Watson services to hear alerts</a></dt>
 <dd>Using **Watson Cognitive** services to turn text into spoken messages</dd>
 </dl>
 
