@@ -81,7 +81,7 @@ Workshop Activities
 
 [Email Messages](#email-messages)
 
-[SMS text](#Add-Twilio-to raise-alerts-with-SMS)
+[SMS text](#add-twilio-to raise-alerts-with-sms)
 
 [Adding Watson services to hear alerts](#adding-watson-services-to-hear-alerts)
 
