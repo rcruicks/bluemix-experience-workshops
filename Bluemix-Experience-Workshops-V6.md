@@ -79,17 +79,17 @@ Workshop Activities
 
 [Integrate warning messages into the flow](#integrate-warning-messages-into-the-flow)
 
-[Email Messages](#email-messages)
+	[Email Messages](#integrate-warning-messages-into-the-flow)
 
-[SMS text](#add-twilio-to raise-alerts-with-sms)
+	[SMS text](#integrate-warning-messages-into-the-flow)
 
-[Adding Watson services to hear alerts](#adding-watson-services-to-hear-alerts)
+	[Adding Watson services to hear alerts](#integrate-warning-messages-into-the-flow)
 
 [Create a simple web front-end in Bluemix](#create-a-simple-web-front-end-in-bluemix)
 
-[Edit the website to load the device history into a dashboard](#edit-the-website-to-load-the-device-history-into-a-dashboard)
+	[Edit the website to load the device history into a dashboard](#edit-the-website-to-load-the-device-history-into-a-dashboard)
 
-[Add dashboard components to the website using Node RED](#add-dashboard-components-to-the-website-using-node-red)
+	[Add dashboard components to the website using Node RED](#add-dashboard-components-to-the-website-using-node-red)
 
 [Introducing a real IOT sensor](#introducing-a-real-iot-sensor)
 
