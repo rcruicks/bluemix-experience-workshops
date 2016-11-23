@@ -73,28 +73,28 @@ Workshop Activities
 
 [Understanding and setting criteria for the data flow](#understanding-and-setting-criteria-for-the-data-flow)
 
-[Using a database to store the saved Data](#using-a-database-to-store-the-saved-data)
+[Using a database to store the saved Data](#using-a-database-to-store-the-received-data)
 
 [Display Data and Statistics](#display-data-and-statistics)
 
 [Integrate warning messages into the flow](#integrate-warning-messages-into-the-flow)
 
-	[Email Messages](#integrate-warning-messages-into-the-flow)
+[Email Messages](#generate-email-alerts)
 
-	[SMS text](#integrate-warning-messages-into-the-flow)
+[SMS text](#integrate-warning-messages-into-the-flow)
 
-	[Adding Watson services to hear alerts](#integrate-warning-messages-into-the-flow)
+[Adding Watson services to hear alerts](#integrate-warning-messages-into-the-flow)
 
 [Create a simple web front-end in Bluemix](#create-a-simple-web-front-end-in-bluemix)
 
-	[Edit the website to load the device history into a dashboard](#edit-the-website-to-load-the-device-history-into-a-dashboard)
+[Edit the website to load the device history into a dashboard](#edit-the-website-to-load-the-device-history-into-a-dashboard)
 
-	[Add dashboard components to the website using Node RED](#add-dashboard-components-to-the-website-using-node-red)
+[Add dashboard components to the website using Node RED](#add-dashboard-components-to-the-website-using-node-red)
 
 [Introducing a real IOT sensor](#introducing-a-real-iot-sensor)
 
-Getting Started
-===============
+
+# Getting Started #
 
 You'll need an IBM Bluemix account to be able to build the application in this
 workshop -- if you don't already have one, sign up for a trial account at
@@ -104,7 +104,7 @@ FREE**.
 If you want to know more about Node-RED, see <http://nodered.org/docs/>.
 
 
-Create the basic Internet of Things application
+# Create the basic Internet of Things application #
 ===============================================
 
 -   Login to Bluemix ( https://console.ng.bluemix.net or
@@ -162,8 +162,7 @@ Create the basic Internet of Things application
 NB The Dashboard will remain open in a separate Tab.
 
 
-Import the sample sensor code
-=============================
+# Import the sample sensor code #
 
 Rather than creating or coding the application yourself, we have created the
 code below for you to copy and paste. This can be modified later.
@@ -172,7 +171,6 @@ Copy all the text from the following plain text file:
 
 
 [IOT flow example](./media/text/example-iot-flow-1.txt)
-
 
 -   In the Node-RED flow editor select the menu (upper right of screen). Select
     `Import` then `Clipboard`
@@ -193,8 +191,7 @@ Copy all the text from the following plain text file:
     ![](media/5a265348e8731be1c9f9d396570b8bbd.png)
 
 
-Identify input source for a simulated device 
-=============================================
+# Identify input source for a simulated device  #
 
 For further ease, there is a simulated device running on Bluemix ready for you
 to use.
@@ -239,8 +236,8 @@ console to see what data is being captured.
 -   The capture of the simulated readings starts and the Deploy button becomes
 	inactive.
 
-Viewing the import flow 
-=======================
+# Viewing the import flow #
+
 -   In the side bar below the Deploy button, click on to the `debug` tab.
 -   You should now see the debug messages from the flow, showing the
     temperature published by the sensor.
@@ -276,8 +273,7 @@ or changed.
 ![](media/580517727e7ed93174f5061758af1ed7.png)
 
 
-Understanding and setting criteria for the data flow
-====================================================
+# Understanding and setting criteria for the data flow #
 
 You can examine the content of any node by **double clicking** it.
 
@@ -324,9 +320,7 @@ Enter a filename for the data being exported and click OK
 
 ![](media/1f2d03f7a0018968090987dfb20ad09d.png)
 
-
-Using a database to store the saved Data
-========================================
+# Using a database to store the received Data #
 
 The IoT starter application template in the original Dashboard screen has a
 service called the Cloudant database created and bound to the application.
@@ -413,8 +407,7 @@ Cloudant Database screen.
 	![](media/63c3620b0b66f7d7833f83264ac69720.png)
 
 
-Display Data and Statistics
-===========================
+# Display Data and Statistics #
 
 This section takes the data we have already captured in the Cloudant database
 and allows you to present on a simple web page.
@@ -436,7 +429,7 @@ Open the cloudant node (`iottemp`) and update with the name of your Cloudant
 service instance. Click Deploy.
 
 The application will now accept a web request to the URL
-<http://IOT-WS-OCR.eu-gb.bluemix.net/history>, retrieve all currently logged
+http://IOT-WS-OCR.eu-gb.bluemix.net/history, retrieve all currently logged
 temperature values from the Cloudant database, calculate current Min/Max/Average
 values, and display on a webpage.
 
@@ -445,13 +438,13 @@ NB See later stages for the creation of the web page.
 ![](media/f8ba40c306a1c0dc5c7af73a7837848c.png)
 
 
- Integrate warning messages into the flow
-=========================================
+# Integrate warning messages into the flow #
 
 Here we look at a variety of technicques and technologies for raising the alarm:
-<dl> 
-<dt><a href=/modules/email/Email-alerting-V6.md>Generate Email alerts</a> </dt>
-<dd>Integrate message flow to **SMTP** services to send emails</dd>
+
+## [Generate Email Alerts](/modules/email/Email-alerting-V6.md) ##
+Integrate message flow to **SMTP** services to send emails
+</dl>
 <dt><a href=/modules/SMS/Twilio-SMS-V6.md>Add Twilio to raise alerts with SMS</a></dt>
 <dd>Incorporate **SMS messaging** to send alerts to mobile devices</dd>
 <dt><a href=/modules/Watson/Watson-speaks-V6.md>Adding Watson services to hear alerts</a></dt>
@@ -460,8 +453,7 @@ Here we look at a variety of technicques and technologies for raising the alarm:
 
 
 
-Create a simple web front-end in Bluemix
-========================================
+# Create a simple web front-end in Bluemix #
 
 In this section, you will be creating and tailoring the webpage to present the
 data in the Bluemix environment. You will link the webpage to the Node-RED
@@ -470,16 +462,14 @@ application and display the results as a simple dashboard.
 
 ![Deploy website app to Bluemix](/modules/UI/BMX-static-webpage-V6.md)
 
-Add dashboard components to the website using Node RED
-======================================================
+# Add dashboard components to the website using Node RED #
 
 The simple web data display is a little raw -- with new features available in Node-RED,
 you can add graphical components simply and quickly.
 
 ![Create Node-RED dashboard widgets](/modules/UI/BMX-NR-dashboard-V6.md)
 
-Other content sources
-=====================
+# Other content sources #
 
 To add a little context to the dashboard, bring in current temperature and
 weather forecast for your location;
@@ -503,8 +493,7 @@ weather forecast for your location;
 
 
 
-Introducing a real IOT sensor
-=============================
+# Introducing a real IOT sensor #
 
 So far, the data for the application has been generated by a web-based
 simulator. Now, we will introduce real-world data using a prototyping kit from a
@@ -517,8 +506,7 @@ Now you can close the IOTSensor simulator, and your application will continue to
 run.
 
 
-Further reading
-===============
+# Further reading #
 
 More information on Node-RED and the IBM Internet of Things can be found :
 
