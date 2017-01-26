@@ -1,1 +1,121 @@
-[{"id":"229eb6ea.3026b2","type":"delay","z":"ebd04ace.c62cc8","name":"","pauseType":"rate","timeout":"5","timeoutUnits":"seconds","rate":"4","nbRateUnits":"1","rateUnits":"minute","randomFirst":"1","randomLast":"5","randomUnits":"seconds","drop":true,"x":550.5,"y":543.0000610351562,"wires":[["96108a2a.9ed08"]]},{"id":"96108a2a.9ed08","type":"watson-text-to-speech","z":"ebd04ace.c62cc8","name":"","lang":"en-US","langhidden":"en-US","voice":"en-US_AllisonVoice","voicehidden":"en-US_AllisonVoice","format":"audio/wav","password":"","x":454.5,"y":600.0000305175781,"wires":[["2572f1bf.87c286"]]},{"id":"2572f1bf.87c286","type":"change","z":"ebd04ace.c62cc8","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"speech","tot":"msg"}],"action":"","property":"","from":"","to":"","reg":false,"x":469.5,"y":652.6001281738281,"wires":[["731aa061.9b06f8","a11da456.f73568"]]},{"id":"731aa061.9b06f8","type":"websocket out","z":"ebd04ace.c62cc8","name":"","server":"18bd1a5.c297866","client":"","x":689.5,"y":614.8000793457031,"wires":[]},{"id":"a11da456.f73568","type":"debug","z":"ebd04ace.c62cc8","name":"","active":true,"console":"false","complete":"false","x":688.5,"y":671.4000549316406,"wires":[]},{"id":"f37e9b12.104968","type":"http response","z":"ebd04ace.c62cc8","name":"","x":676.7454853057861,"y":720.6727409362793,"wires":[]},{"id":"eaaf05ae.99f188","type":"template","z":"ebd04ace.c62cc8","name":"Watson Speaks","field":"","fieldType":"msg","syntax":"mustache","template":"<!DOCTYPE html>\n<html>\n<head>\n  <title>IBM Watson - Text To Speech</title>\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js\"></script>\n  \n  <script type=\"text/javascript\">\n    var socketaddy = \"ws://\" + window.location.host + \"/ws/audio\";\n\n    $(document).ready(function(){\n      var output = document.getElementById('output')\n      $('#output').on('playing', function () {\n          $('#text').text('Audio ...')\n          \n      });\n      $('#output').on('ended', function () {\n          $('#text').text('Waiting ...')\n          \n      });\n      sock = new WebSocket(socketaddy);\n      sock.onopen = function(){\n          $('#text').text('Waiting ...');\n          console.log(\"Connected websocket\");\n      };\n      sock.onerror = function(){ \n          console.log(\"Websocket error\"); \n      };\n      sock.onclose = function () {\n          $('#text').text('Not connected. Refresh the page?')\n      }\n      sock.onmessage = function(evt){\n        console.log(\"Websocket message\", evt); \n        output.src = window.URL.createObjectURL(evt.data);\n        output.play();\n      };\n    });\n  </script>\n  \n</head>\n<body style=\"font-size: 56px; font-family: helvetica; text-align: center; margin-top: 100px;\">\n  <div id=\"text\">Connecting...</div>\n  <audio id=\"output\"></audio>\n</body>\n</html>","x":468.20001220703125,"y":721.4000244140625,"wires":[["f37e9b12.104968"]]},{"id":"e2f3fddc.c91608","type":"http in","z":"ebd04ace.c62cc8","name":"","url":"/audio","method":"get","swaggerDoc":"","x":247.20001220703125,"y":725.4000244140625,"wires":[["eaaf05ae.99f188"]]},{"id":"18bd1a5.c297866","type":"websocket-listener","z":"","path":"/ws/audio","wholemsg":"false"}]
+[{
+	"id": "229eb6ea.3026b2",
+	"type": "delay",
+	"z": "ebd04ace.c62cc8",
+	"name": "",
+	"pauseType": "rate",
+	"timeout": "5",
+	"timeoutUnits": "seconds",
+	"rate": "4",
+	"nbRateUnits": "1",
+	"rateUnits": "minute",
+	"randomFirst": "1",
+	"randomLast": "5",
+	"randomUnits": "seconds",
+	"drop": true,
+	"x": 550.5,
+	"y": 543.0000610351562,
+	"wires": [
+		["96108a2a.9ed08"]
+	]
+}, {
+	"id": "96108a2a.9ed08",
+	"type": "watson-text-to-speech",
+	"z": "ebd04ace.c62cc8",
+	"name": "",
+	"lang": "en-US",
+	"langhidden": "en-US",
+	"voice": "en-US_AllisonVoice",
+	"voicehidden": "en-US_AllisonVoice",
+	"format": "audio/wav",
+	"password": "",
+	"x": 454.5,
+	"y": 600.0000305175781,
+	"wires": [
+		["2572f1bf.87c286"]
+	]
+}, {
+	"id": "2572f1bf.87c286",
+	"type": "change",
+	"z": "ebd04ace.c62cc8",
+	"name": "",
+	"rules": [{
+		"t": "set",
+		"p": "payload",
+		"pt": "msg",
+		"to": "speech",
+		"tot": "msg"
+	}],
+	"action": "",
+	"property": "",
+	"from": "",
+	"to": "",
+	"reg": false,
+	"x": 469.5,
+	"y": 652.6001281738281,
+	"wires": [
+		["731aa061.9b06f8", "a11da456.f73568"]
+	]
+}, {
+	"id": "731aa061.9b06f8",
+	"type": "websocket out",
+	"z": "ebd04ace.c62cc8",
+	"name": "",
+	"server": "18bd1a5.c297866",
+	"client": "",
+	"x": 689.5,
+	"y": 614.8000793457031,
+	"wires": []
+}, {
+	"id": "a11da456.f73568",
+	"type": "debug",
+	"z": "ebd04ace.c62cc8",
+	"name": "",
+	"active": true,
+	"console": "false",
+	"complete": "false",
+	"x": 688.5,
+	"y": 671.4000549316406,
+	"wires": []
+}, {
+	"id": "f37e9b12.104968",
+	"type": "http response",
+	"z": "ebd04ace.c62cc8",
+	"name": "",
+	"x": 676.7454853057861,
+	"y": 720.6727409362793,
+	"wires": []
+}, {
+	"id": "eaaf05ae.99f188",
+	"type": "template",
+	"z": "ebd04ace.c62cc8",
+	"name": "Watson Speaks",
+	"field": "",
+	"fieldType": "msg",
+	"syntax": "mustache",
+	"template": "<!DOCTYPE html>\n<html>\n<head>\n  <title>IBM Watson - Text To Speech</title>\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js\"></script>\n  \n  <script type=\"text/javascript\">\n    var socketaddy = \"ws://\" + window.location.host + \"/ws/audio\";\n\n    $(document).ready(function(){\n      var output = document.getElementById('output')\n      $('#output').on('playing', function () {\n          $('#text').text('Audio ...')\n          \n      });\n      $('#output').on('ended', function () {\n          $('#text').text('Waiting ...')\n          \n      });\n      sock = new WebSocket(socketaddy);\n      sock.onopen = function(){\n          $('#text').text('Waiting ...');\n          console.log(\"Connected websocket\");\n      };\n      sock.onerror = function(){ \n          console.log(\"Websocket error\"); \n      };\n      sock.onclose = function () {\n          $('#text').text('Not connected. Refresh the page?')\n      }\n      sock.onmessage = function(evt){\n        console.log(\"Websocket message\", evt); \n        output.src = window.URL.createObjectURL(evt.data);\n        output.play();\n      };\n    });\n  </script>\n  \n</head>\n<body style=\"font-size: 56px; font-family: helvetica; text-align: center; margin-top: 100px;\">\n  <div id=\"text\">Connecting...</div>\n  <audio id=\"output\"></audio>\n</body>\n</html>",
+	"x": 468.20001220703125,
+	"y": 721.4000244140625,
+	"wires": [
+		["f37e9b12.104968"]
+	]
+}, {
+	"id": "e2f3fddc.c91608",
+	"type": "http in",
+	"z": "ebd04ace.c62cc8",
+	"name": "",
+	"url": "/audio",
+	"method": "get",
+	"swaggerDoc": "",
+	"x": 247.20001220703125,
+	"y": 725.4000244140625,
+	"wires": [
+		["eaaf05ae.99f188"]
+	]
+}, {
+	"id": "18bd1a5.c297866",
+	"type": "websocket-listener",
+	"z": "",
+	"path": "/ws/audio",
+	"wholemsg": "false"
+}]
