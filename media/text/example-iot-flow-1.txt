@@ -1,52 +1,101 @@
-[{"id":"216dad58.0b1502","type":"ibmiot
-in","authentication":"apiKey","inputType":"evt","deviceId":"","applicationId":"","deviceType":"","eventType":"","commandType":"","format":"","name":"IBM
-IoT App
-In","service":"","allDevices":"","allApplications":"","allDeviceTypes":"","allEvents":"","allCommands":"","allFormats":"",
-
-"x":158.1999969482422,"y":1389.199951171875,"z":"90d0629c.50294",
-
-"wires":[["f9e13431.747ac8","2de9a99.8dc7cd6"]]},
-
-{"id":"f9e13431.747ac8","type":"function","name":"temp","func":"return
-{payload:msg.payload.d.temp};","outputs":1,
-
-"x":361.20001220703125,"y":1430.4000244140625,"z":"90d0629c.50294",
-
-"wires":[["7380a4e7.57326c"]]},
-
-{"id":"7380a4e7.57326c","type":"switch","name":"temp
-thresh","property":"payload","rules":[{"t":"lte","v":"40"},{"t":"gt","v":"40"}],"checkall":"true","outputs":2,
-
-"x":510.20001220703125,"y":1431.4000244140625,"z":"90d0629c.50294",
-
-"wires":[["aae9df13.376ee8"],["233e8b4.9dff6f4"]]},
-
-{"id":"eebb91b0.4b4108","type":"debug","name":"cpu
-status","active":true,"complete":"false",
-
-"x":821.2000122070312,"y":1428.4000244140625,"z":"90d0629c.50294",
-
-"wires":[]},
-
-{"id":"2de9a99.8dc7cd6","type":"debug","name":"device
-data","active":true,"complete":"false",
-
-"x":361.20001220703125,"y":1341.4000244140625,"z":"90d0629c.50294",
-
-"wires":[]},
-
-{"id":"aae9df13.376ee8","type":"template","name":"safe",
-
-"template":"Temperature ({{payload}}) within safe limits",
-
-"x":674.2000122070312,"y":1382.4000244140625,"z":"90d0629c.50294",
-
-"wires":[["eebb91b0.4b4108"]]},
-
-{"id":"233e8b4.9dff6f4","type":"template","name":"danger",
-
-"template":"Temperature ({{payload}}) critical",
-
-"x":673.2000122070312,"y":1476.4000244140625,"z":"90d0629c.50294",
-
-"wires":[["eebb91b0.4b4108"]]}]
+[{
+	"id": "216dad58.0b1502",
+	"type": "ibmiot in",
+	"authentication": "apiKey",
+	"inputType": "evt",
+	"deviceId": "",
+	"applicationId": "",
+	"deviceType": "",
+	"eventType": "",
+	"commandType": "",
+	"format": "",
+	"name": "IBM IoT App In",
+	"service": "",
+	"allDevices": "",
+	"allApplications": "",
+	"allDeviceTypes": "",
+	"allEvents": "",
+	"allCommands": "",
+	"allFormats": "",
+	"x": 158.1999969482422,
+	"y": 1389.199951171875,
+	"z": "90d0629c.50294",
+	"wires": [
+		["f9e13431.747ac8", "2de9a99.8dc7cd6"]
+	]
+}, {
+	"id": "f9e13431.747ac8",
+	"type": "function",
+	"name": "temp",
+	"func": "return {payload:msg.payload.d.temp};",
+	"outputs": 1,
+	"x": 361.20001220703125,
+	"y": 1430.4000244140625,
+	"z": "90d0629c.50294",
+	"wires": [
+		["7380a4e7.57326c"]
+	]
+}, {
+	"id": "7380a4e7.57326c",
+	"type": "switch",
+	"name": "temp thresh",
+	"property": "payload",
+	"rules": [{
+		"t": "lte",
+		"v": "40"
+	}, {
+		"t": "gt",
+		"v": "40"
+	}],
+	"checkall": "true",
+	"outputs": 2,
+	"x": 510.20001220703125,
+	"y": 1431.4000244140625,
+	"z": "90d0629c.50294",
+	"wires": [
+		["aae9df13.376ee8"],
+		["233e8b4.9dff6f4"]
+	]
+}, {
+	"id": "eebb91b0.4b4108",
+	"type": "debug",
+	"name": "cpu status",
+	"active": true,
+	"complete": "false",
+	"x": 821.2000122070312,
+	"y": 1428.4000244140625,
+	"z": "90d0629c.50294",
+	"wires": []
+}, {
+	"id": "2de9a99.8dc7cd6",
+	"type": "debug",
+	"name": "device data",
+	"active": true,
+	"complete": "false",
+	"x": 361.20001220703125,
+	"y": 1341.4000244140625,
+	"z": "90d0629c.50294",
+	"wires": []
+}, {
+	"id": "aae9df13.376ee8",
+	"type": "template",
+	"name": "safe",
+	"template": "Temperature ({{payload}}) within safe limits",
+	"x": 674.2000122070312,
+	"y": 1382.4000244140625,
+	"z": "90d0629c.50294",
+	"wires": [
+		["eebb91b0.4b4108"]
+	]
+}, {
+	"id": "233e8b4.9dff6f4",
+	"type": "template",
+	"name": "danger",
+	"template": "Temperature ({{payload}}) critical",
+	"x": 673.2000122070312,
+	"y": 1476.4000244140625,
+	"z": "90d0629c.50294",
+	"wires": [
+		["eebb91b0.4b4108"]
+	]
+}]
