@@ -1,121 +1,185 @@
 [{
-	"id": "229eb6ea.3026b2",
+	"id": "896aa9cc.e1d4",
+	"type": "function",
+	"z": "ebd04ace.c62cc8",
+	"name": "forward",
+	"func": "\nreturn msg;",
+	"outputs": 1,
+	"noerr": 0,
+	"x": 189.49998474121094,
+	"y": 241.40000915527344,
+	"wires": [
+		["fbe1a8c9.ae7108", "a2ae22b6.480bb8", "ffe3f215.53cb98", "400669b.adfd518"]
+	]
+}, {
+	"id": "400669b.adfd518",
+	"type": "function",
+	"z": "ebd04ace.c62cc8",
+	"name": "average",
+	"func": "msg.topic=\"Average\";\nvar avg = global.get(\"avg\")||msg.payload;\navg = (avg + msg.payload)/2;\nglobal.set(\"avg\",avg);\nmsg.payload = avg;\nreturn msg;",
+	"outputs": 1,
+	"noerr": 0,
+	"x": 379.20001220703125,
+	"y": 314.20001220703125,
+	"wires": [
+		["c4dd424f.438fd"]
+	]
+}, {
+	"id": "ffe3f215.53cb98",
+	"type": "function",
+	"z": "ebd04ace.c62cc8",
+	"name": "Minimum",
+	"func": "msg.topic=\"Minimum\";\nvar avg = global.get(\"min\")||msg.payload;\nmin = Math.min(avg,msg.payload);\nglobal.set(\"min\",min);\nmsg.payload = min;\nreturn msg;",
+	"outputs": 1,
+	"noerr": 0,
+	"x": 384.20001220703125,
+	"y": 264.20001220703125,
+	"wires": [
+		["a0c73203.c12118"]
+	]
+}, {
+	"id": "a2ae22b6.480bb8",
+	"type": "function",
+	"z": "ebd04ace.c62cc8",
+	"name": "Maximum",
+	"func": "msg.topic=\"Max\";\nvar avg = global.get(\"max\")||msg.payload;\nmax = Math.max(avg,msg.payload);\nglobal.set(\"max\",max);\nmsg.payload = max;\nreturn msg;",
+	"outputs": 1,
+	"noerr": 0,
+	"x": 378.20001220703125,
+	"y": 218.1999969482422,
+	"wires": [
+		["776bd3ba.0bfcdc"]
+	]
+}, {
+	"id": "fbe1a8c9.ae7108",
+	"type": "function",
+	"z": "ebd04ace.c62cc8",
+	"name": "Value",
+	"func": "msg.topic=\"Temperature\";\nreturn msg;",
+	"outputs": 1,
+	"noerr": 0,
+	"x": 363.5,
+	"y": 170.59999084472656,
+	"wires": [
+		["db835c23.3fe2f8"]
+	]
+}, {
+	"id": "db835c23.3fe2f8",
 	"type": "delay",
 	"z": "ebd04ace.c62cc8",
 	"name": "",
 	"pauseType": "rate",
 	"timeout": "5",
 	"timeoutUnits": "seconds",
-	"rate": "4",
+	"rate": "6",
 	"nbRateUnits": "1",
 	"rateUnits": "minute",
 	"randomFirst": "1",
 	"randomLast": "5",
 	"randomUnits": "seconds",
 	"drop": true,
-	"x": 550.5,
-	"y": 543.0000610351562,
+	"x": 542.2000122070312,
+	"y": 169.1999969482422,
 	"wires": [
-		["96108a2a.9ed08"]
+		["5a936203.20c164"]
 	]
 }, {
-	"id": "96108a2a.9ed08",
-	"type": "watson-text-to-speech",
+	"id": "776bd3ba.0bfcdc",
+	"type": "delay",
 	"z": "ebd04ace.c62cc8",
 	"name": "",
-	"lang": "en-US",
-	"langhidden": "en-US",
-	"voice": "en-US_AllisonVoice",
-	"voicehidden": "en-US_AllisonVoice",
-	"format": "audio/wav",
-	"password": "",
-	"x": 454.5,
-	"y": 600.0000305175781,
+	"pauseType": "rate",
+	"timeout": "5",
+	"timeoutUnits": "seconds",
+	"rate": "6",
+	"nbRateUnits": "1",
+	"rateUnits": "minute",
+	"randomFirst": "1",
+	"randomLast": "5",
+	"randomUnits": "seconds",
+	"drop": true,
+	"x": 543.2000122070312,
+	"y": 217.1999969482422,
 	"wires": [
-		["2572f1bf.87c286"]
+		["5a936203.20c164"]
 	]
 }, {
-	"id": "2572f1bf.87c286",
-	"type": "change",
+	"id": "a0c73203.c12118",
+	"type": "delay",
 	"z": "ebd04ace.c62cc8",
 	"name": "",
-	"rules": [{
-		"t": "set",
-		"p": "payload",
-		"pt": "msg",
-		"to": "speech",
-		"tot": "msg"
-	}],
-	"action": "",
-	"property": "",
-	"from": "",
-	"to": "",
-	"reg": false,
-	"x": 469.5,
-	"y": 652.6001281738281,
+	"pauseType": "rate",
+	"timeout": "5",
+	"timeoutUnits": "seconds",
+	"rate": "6",
+	"nbRateUnits": "1",
+	"rateUnits": "minute",
+	"randomFirst": "1",
+	"randomLast": "5",
+	"randomUnits": "seconds",
+	"drop": true,
+	"x": 543.2000122070312,
+	"y": 264.20001220703125,
 	"wires": [
-		["731aa061.9b06f8", "a11da456.f73568"]
+		["5a936203.20c164"]
 	]
 }, {
-	"id": "731aa061.9b06f8",
-	"type": "websocket out",
+	"id": "c4dd424f.438fd",
+	"type": "delay",
 	"z": "ebd04ace.c62cc8",
 	"name": "",
-	"server": "18bd1a5.c297866",
-	"client": "",
-	"x": 689.5,
-	"y": 614.8000793457031,
-	"wires": []
-}, {
-	"id": "a11da456.f73568",
-	"type": "debug",
-	"z": "ebd04ace.c62cc8",
-	"name": "",
-	"active": true,
-	"console": "false",
-	"complete": "false",
-	"x": 688.5,
-	"y": 671.4000549316406,
-	"wires": []
-}, {
-	"id": "f37e9b12.104968",
-	"type": "http response",
-	"z": "ebd04ace.c62cc8",
-	"name": "",
-	"x": 676.7454853057861,
-	"y": 720.6727409362793,
-	"wires": []
-}, {
-	"id": "eaaf05ae.99f188",
-	"type": "template",
-	"z": "ebd04ace.c62cc8",
-	"name": "Watson Speaks",
-	"field": "",
-	"fieldType": "msg",
-	"syntax": "mustache",
-	"template": "<!DOCTYPE html>\n<html>\n<head>\n  <title>IBM Watson - Text To Speech</title>\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js\"></script>\n  \n  <script type=\"text/javascript\">\n    var socketaddy = \"ws://\" + window.location.host + \"/ws/audio\";\n\n    $(document).ready(function(){\n      var output = document.getElementById('output')\n      $('#output').on('playing', function () {\n          $('#text').text('Audio ...')\n          \n      });\n      $('#output').on('ended', function () {\n          $('#text').text('Waiting ...')\n          \n      });\n      sock = new WebSocket(socketaddy);\n      sock.onopen = function(){\n          $('#text').text('Waiting ...');\n          console.log(\"Connected websocket\");\n      };\n      sock.onerror = function(){ \n          console.log(\"Websocket error\"); \n      };\n      sock.onclose = function () {\n          $('#text').text('Not connected. Refresh the page?')\n      }\n      sock.onmessage = function(evt){\n        console.log(\"Websocket message\", evt); \n        output.src = window.URL.createObjectURL(evt.data);\n        output.play();\n      };\n    });\n  </script>\n  \n</head>\n<body style=\"font-size: 56px; font-family: helvetica; text-align: center; margin-top: 100px;\">\n  <div id=\"text\">Connecting...</div>\n  <audio id=\"output\"></audio>\n</body>\n</html>",
-	"x": 468.20001220703125,
-	"y": 721.4000244140625,
+	"pauseType": "rate",
+	"timeout": "5",
+	"timeoutUnits": "seconds",
+	"rate": "6",
+	"nbRateUnits": "1",
+	"rateUnits": "minute",
+	"randomFirst": "1",
+	"randomLast": "5",
+	"randomUnits": "seconds",
+	"drop": true,
+	"x": 544.5,
+	"y": 313.20001220703125,
 	"wires": [
-		["f37e9b12.104968"]
+		["5a936203.20c164"]
 	]
 }, {
-	"id": "e2f3fddc.c91608",
-	"type": "http in",
+	"id": "5a936203.20c164",
+	"type": "ui_chart",
 	"z": "ebd04ace.c62cc8",
 	"name": "",
-	"url": "/audio",
-	"method": "get",
-	"swaggerDoc": "",
-	"x": 247.20001220703125,
-	"y": 725.4000244140625,
+	"group": "e15dd43.3c2d928",
+	"order": 0,
+	"width": 0,
+	"height": 0,
+	"label": "chart",
+	"chartType": "line",
+	"legend": "false",
+	"xformat": "%H:%M:%S",
+	"interpolate": "linear",
+	"nodata": "",
+	"ymin": "",
+	"ymax": "",
+	"removeOlder": "30",
+	"removeOlderUnit": "60",
+	"x": 717.5,
+	"y": 248.60000610351562,
 	"wires": [
-		["eaaf05ae.99f188"]
+		[],
+		[]
 	]
 }, {
-	"id": "18bd1a5.c297866",
-	"type": "websocket-listener",
+	"id": "e15dd43.3c2d928",
+	"type": "ui_group",
 	"z": "",
-	"path": "/ws/audio",
-	"wholemsg": "false"
+	"name": "Default",
+	"tab": "c261d19.2ddc2b",
+	"disp": true,
+	"width": "6"
+}, {
+	"id": "c261d19.2ddc2b",
+	"type": "ui_tab",
+	"z": "",
+	"name": "Home",
+	"icon": "dashboard"
 }]
