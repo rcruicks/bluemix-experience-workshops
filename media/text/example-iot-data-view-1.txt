@@ -23,19 +23,19 @@
 {"id":"8c0e9b35.1f5e2",
 "type":"function",
 "name":"temp stats",
-"func":"var avg =0;var max = 0;var min = 9999;var count = 0;var sum = 0;
-var temp=0;
-for (var i in msg.payload){
-  temp = parseInt(msg.payload[i].payload);
-  count += 1;sum += temp;
-  if (temp \> max){max = temp;}
-  if (temp \< min){min = temp;}
-}
-avg= sum / count;
-msg.count = count;
-msg.avg = avg.toFixed(2);
-msg.max = max;
-msg.min = min;
+"func":"var avg =0;var max = 0;var min = 9999;var count = 0;var sum = 0;\\n
+var temp=0;\\n
+for (var i in msg.payload){\\n
+  temp = parseInt(msg.payload[i].payload);\\n
+  count += 1;sum += temp;\\n
+  if (temp \> max){max = temp;}\\n
+  if (temp \< min){min = temp;}\\n
+}\\n
+avg= sum / count;\\n
+msg.count = count;\\n
+msg.avg = avg.toFixed(2);\\n
+msg.max = max;\\n
+msg.min = min;\\n
 return msg;",
 "outputs":1,"noerr":0,"x":512.2000122070312,"y":326.20001220703125,"z":"21670b53.c839cc",
 "wires":[["c988f014.f6d508"]]
@@ -47,9 +47,8 @@ return msg;",
 "format":"handlebars",
 "template":"\<html\>\\n
 \<head\>\\n \<meta http-equiv=\\"refresh\\" content=\\"5\\"\>\\n
-\</head\>\\n\<body\>\\n This is the temperature history:\\n\<br\>\\nValues = {{
-count}}, Max = {{max}}, Min = {{min}}, Average = {{avg}}\\n\<p\>\\n\<select
-size=10\>\\n{{\#payload}}\\n
+\</head\>\\n\<body\>\\n This is the temperature history:\\n\<br\>\\n
+Values = {{count}}, Max = {{max}}, Min = {{min}}, Average = {{avg}}\\n\<p\>\\n\<select size=10\>\\n{{\#payload}}\\n
 \<option\>{{payload}}\</option\>\\n{{/payload}}\\n\</select\>\\n\</body\>\\n\</html\>\\n",
 "x":690.2000122070312,"y":326.20001220703125,"z":"21670b53.c839cc",
 "wires":[["c807dbb8.0da9"]]
