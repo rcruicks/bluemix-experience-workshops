@@ -65,6 +65,7 @@ From here, click on `index.html` to open an edit window:
 
 Update the contents of index.html to connect to your history display URL:
 
+```
 	<html>
 		<body>
 		Hello, Bluemix World!
@@ -76,21 +77,27 @@ Update the contents of index.html to connect to your history display URL:
 		</iframe>
 		</body>
 	</html>
-
+```
 
 To look like this (with adjustments for your URL):
 
 ![](/media/1af359880d67a65fc0f93c4bd8b9ee4d.png)
 
-Click on the white triangle/arrow highlighted by the red circle; this will push
-your changes into the running website.
+Save the changes made by selecting the `File` menu option, and then click `Save`. 
+Once saved, the updates will not be visible on the website until incorporated into the published version of the application: this requires committing the changes to the associated [Git repository](https://github.com/).
 
-The status area to the left of the arrow will change to:
+To activate this, select the Git icon on the left side menu
+![]("/media/Screen Shot 2017-06-26 at 10.19.05.png")
 
-![](/media/003fa0e56e6d4921aed2b134d005f795.png)
+You should see a panel that indicates changes are pending, and prompting for a comment to annotate the change.
+![]("/media/Screen Shot 2017-06-25 at 15.17.20.png")
 
-When this changes to show that the application is running again, click on the
-launch icon indicated by the green circle in the above screen-shot.
+Now publication through the `Push` botton:
+![]("/media/Screen Shot 2017-06-25 at 15.18.02.png")
+
+The automated build pipeline, created when the project was deployed to Bluemix, will detect that the repository has been updated, and will re-deploy the application into the Bluemix production environment.
+
+**Note:** it can take a couple of minutes for the website to update.
 
 You should now have a page similar to this:
 
