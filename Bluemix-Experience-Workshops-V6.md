@@ -512,6 +512,8 @@ More information on Node-RED and the IBM Internet of Things can be found :
 
 <http://nodered.org>
 
+[developerWorks course: Node-RED basics to bots](https://developer.ibm.com/courses/all/node-red-basics-bots/)
+
 <http://mqtt.org>
 
 <https://www.ibmdw.net/iot/>
@@ -520,8 +522,7 @@ More information on Node-RED and the IBM Internet of Things can be found :
 
 [Connected Car - Traffic Simulator](http://trafficsimulator.mybluemix.net/)
 
-[Connected Car - Traffic Simulator - how to implement the IoT
-App](http://m2m.demos.ibm.com/trafficsimulator.html)
+[Connected Car - Traffic Simulator - how to implement the IoT App](http://m2m.demos.ibm.com/trafficsimulator.html)
 
 Recommended technical articles and examples:
 
