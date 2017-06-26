@@ -86,13 +86,16 @@ To look like this (with adjustments for your URL):
 Save the changes made by selecting the `File` menu option, and then click `Save`. 
 Once saved, the updates will not be visible on the website until incorporated into the published version of the application: this requires committing the changes to the associated [Git repository](https://github.com/).
 
-To activate this, select the Git icon on the left side menu
+To activate this, select the Git icon on the left side menu:
+
 ![](/media/20170625-d2bm-git.png)
 
 You should see a panel that indicates changes are pending, and prompting for a comment to annotate the change.
+
 ![](/media/20170625-d2bm-git-commit.png)
 
-Now publication through the `Push` botton:
+Now publish the new content through the `Push` button:
+
 ![](/media/20170625-d2bm-git-push.png)
 
 The automated build pipeline, created when the project was deployed to Bluemix, will detect that the repository has been updated, and will re-deploy the application into the Bluemix production environment.
