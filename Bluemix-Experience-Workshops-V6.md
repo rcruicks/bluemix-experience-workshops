@@ -537,10 +537,13 @@ Recommended technical articles and examples:
     Foundation, Part 2: Write the sketch and connect to the IBM IoT Foundation
     Quickstart](http://www.ibm.com/developerworks/cloud/library/cl-bluemix-arduino-iot2/index.html)
 
+Update 2018/10 - since the redevelopment of the IBM Code site and review of the IBM developerworks content, the following articles have been removed
 -   [Build a cloud-ready temperature sensor with the Arduino Uno and the IBM IoT
     Foundation, Part 3: Build a custom application with
-    Node-RED](http://www.ibm.com/developerworks/cloud/library/cl-arduino-iot3-app/index.html)
+    Node-RED][http://www.ibm.com/developerworks/cloud/library/cl-arduino-iot3-app/index.html]
 
 -   [Build a cloud-ready temperature sensor with the Arduino Uno and the IBM IoT
     Foundation, Part 4: Deploy a query
-    GUI](http://www.ibm.com/developerworks/cloud/library/cl-arduino-iot4-app/index.html)
+    GUI][http://www.ibm.com/developerworks/cloud/library/cl-arduino-iot4-app/index.html]
+    
+As an alternative, get up-to-date information on setting up temperature sensors with NodeRED and Arduino, check out Brian Innes' excellent [IoT workshop based on ESP8266, a DHT11/22 and neopixel RGB LED](https://github.com/binnes/esp8266Workshop)
